@@ -1,0 +1,19 @@
+# Vi Fit - Robots.txt
+# This file tells search engines what they can and cannot crawl
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://vifit.ca/sitemap.xml
+
+# Block any future admin or API routes (if added)
+Disallow: /api/
+Disallow: /admin/
+
+# Allow all images
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+
