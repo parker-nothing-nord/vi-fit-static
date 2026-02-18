@@ -23,11 +23,11 @@ export default function PageLogo() {
           className="w-8 h-8 md:w-10 md:h-10 lg:w-11 lg:h-11"
           unoptimized
         />
-        <div className="text-left whitespace-nowrap">
-          <div className="text-text-dark text-[9px] md:text-[10px] lg:text-xs font-poppins font-light tracking-wide leading-tight">
+        <div className="text-left whitespace-nowrap hidden md:block">
+          <div className="text-text-dark text-[10px] lg:text-xs font-poppins font-light tracking-wide leading-tight">
             Your Neighbourhood
           </div>
-          <div className="text-text-dark text-sm md:text-base lg:text-lg font-serif font-light tracking-widest leading-tight">
+          <div className="text-text-dark text-base lg:text-lg font-serif font-light tracking-widest leading-tight">
             G Y M
           </div>
         </div>
