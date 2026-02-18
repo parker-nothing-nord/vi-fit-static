@@ -26,14 +26,15 @@ export default function Hero() {
               alt="Vi Gym Logo"
               width={208}
               height={208}
-              className="w-32 h-32 md:w-44 md:h-44 lg:w-52 lg:h-52"
+              className="w-16 h-16 md:w-44 md:h-44 lg:w-52 lg:h-52"
               priority
+              unoptimized
             />
-            <div className="text-left">
-              <div className="text-white text-2xl md:text-3xl lg:text-4xl font-poppins font-light tracking-wide">
+            <div className="text-left hidden md:block">
+              <div className="text-white text-3xl lg:text-4xl font-poppins font-light tracking-wide">
                 Your Neighbourhood
               </div>
-              <div className="text-white text-6xl md:text-8xl lg:text-9xl font-serif font-light tracking-widest">
+              <div className="text-white text-8xl lg:text-9xl font-serif font-light tracking-widest">
                 G Y M
               </div>
             </div>
