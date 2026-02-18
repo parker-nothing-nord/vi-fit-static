@@ -14,20 +14,20 @@ export default function PageLogo() {
 
   return (
     <div className="absolute top-4 left-4 md:top-6 md:left-6 lg:top-8 lg:left-8 z-50">
-      <Link href="/" className="flex items-center gap-2 md:gap-3 lg:gap-4 hover:opacity-80 transition-opacity">
+      <Link href="/" className="flex items-center gap-1.5 md:gap-2 lg:gap-2.5 hover:opacity-80 transition-opacity">
         <Image
           src="/icon-black.png"
           alt="Vi Gym Logo"
           width={208}
           height={208}
-          className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12"
+          className="w-8 h-8 md:w-10 md:h-10 lg:w-11 lg:h-11"
           unoptimized
         />
         <div className="text-left whitespace-nowrap">
-          <div className="text-text-dark text-[10px] md:text-xs lg:text-sm font-poppins font-light tracking-wide leading-tight">
+          <div className="text-text-dark text-[9px] md:text-[10px] lg:text-xs font-poppins font-light tracking-wide leading-tight">
             Your Neighbourhood
           </div>
-          <div className="text-text-dark text-base md:text-xl lg:text-2xl font-serif font-light tracking-widest leading-tight">
+          <div className="text-text-dark text-sm md:text-base lg:text-lg font-serif font-light tracking-widest leading-tight">
             G Y M
           </div>
         </div>
