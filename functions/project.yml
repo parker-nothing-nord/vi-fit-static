@@ -1,0 +1,18 @@
+packages:
+  - name: vi-fit
+    environment:
+      EMAIL_FROM: parker@nothingnord.fit
+      EMAIL_TO: info@vifit.ca
+      SMTP_HOST: smtp.gmail.com
+      SMTP_PORT: "587"
+      # These will be set via doctl CLI or DO dashboard for security
+      # SMTP_USER: ${SMTP_USER}
+      # SMTP_PASS: ${SMTP_PASS}
+      # GYMMASTER_API_KEY: ${GYMMASTER_API_KEY}
+      # GYMMASTER_SERVICE_ID: ${GYMMASTER_SERVICE_ID}
+      # GYMMASTER_LOCATION_ID: ${GYMMASTER_LOCATION_ID}
+    functions:
+      - name: booking
+        runtime: nodejs:20
+        web: true
+

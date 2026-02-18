@@ -29,7 +29,10 @@ export default function BookingForm() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/booking", {
+      // Use environment variable for API endpoint (serverless function URL)
+      const apiEndpoint = process.env.NEXT_PUBLIC_BOOKING_API_URL || "/api/booking";
+
+      const response = await fetch(apiEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
