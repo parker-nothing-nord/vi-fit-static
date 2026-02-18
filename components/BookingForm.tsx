@@ -18,7 +18,7 @@ export default function BookingForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.selectedSlot) {
       setErrorMessage("Please select a time slot");
       return;
@@ -28,24 +28,47 @@ export default function BookingForm() {
     setSubmitStatus("idle");
     setErrorMessage("");
 
-    try {
-      // Use environment variable for API endpoint (serverless function URL)
-      const apiEndpoint = process.env.NEXT_PUBLIC_BOOKING_API_URL || "/api/booking";
+    // Simulate submission delay
+    await new Promise(resolve => setTimeout(resolve, 1000));
 
-      const response = await fetch(apiEndpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    // TODO: When ready to enable bookings, uncomment this code and set up the serverless function
+    // try {
+    //   const apiEndpoint = process.env.NEXT_PUBLIC_BOOKING_API_URL || "/api/booking";
+    //   const response = await fetch(apiEndpoint, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(formData),
+    //   });
+    //
+    //   if (!response.ok) {
+    //     throw new Error("Booking failed");
+    //   }
+    //
+    //   setSubmitStatus("success");
+    //   setFormData({
+    //     firstName: "",
+    //     lastName: "",
+    //     email: "",
+    //     phone: "",
+    //     selectedSlot: "",
+    //   });
+    // } catch (error) {
+    //   setSubmitStatus("error");
+    //   setErrorMessage("Something went wrong. Please try again or call us at (778) 538-4998");
+    // } finally {
+    //   setIsSubmitting(false);
+    // }
 
-      if (!response.ok) {
-        throw new Error("Booking failed");
-      }
+    // For now, just show success message
+    // In production, this would send an email to info@vifit.ca and/or create a Gym Master booking
+    console.log("Booking submission:", formData);
+    setSubmitStatus("success");
+    setIsSubmitting(false);
 
-      setSubmitStatus("success");
-      // Reset form
+    // Reset form after 3 seconds
+    setTimeout(() => {
       setFormData({
         firstName: "",
         lastName: "",
@@ -53,12 +76,8 @@ export default function BookingForm() {
         phone: "",
         selectedSlot: "",
       });
-    } catch (error) {
-      setSubmitStatus("error");
-      setErrorMessage("Something went wrong. Please try again or call us at (778) 538-4998");
-    } finally {
-      setIsSubmitting(false);
-    }
+      setSubmitStatus("idle");
+    }, 3000);
   };
 
   return (

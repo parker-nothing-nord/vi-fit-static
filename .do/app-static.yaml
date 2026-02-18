@@ -1,0 +1,25 @@
+alerts:
+- rule: DEPLOYMENT_FAILED
+- rule: DOMAIN_FAILED
+features:
+- buildpack-stack=ubuntu-22
+name: vi-fit
+region: tor
+static_sites:
+- name: vi-fit-static
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: parker-nothing-nord/vi-fit-static
+  source_dir: /
+  environment_slug: node-js
+  build_command: npm install && npm run build
+  output_dir: .next/server/app
+  envs:
+  - key: NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+    value: ${NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}
+    scope: RUN_AND_BUILD_TIME
+  - key: NEXT_PUBLIC_BOOKING_API_URL
+    value: ${NEXT_PUBLIC_BOOKING_API_URL}
+    scope: RUN_AND_BUILD_TIME
+

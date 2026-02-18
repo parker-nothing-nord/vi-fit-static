@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Cantarell } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import PageLogo from "@/components/PageLogo";
 
 const poppins = Poppins({
   weight: ['300', '400', '600', '700'],
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${cantarell.variable} font-cantarell antialiased bg-background-light text-text-dark`}
       >
+        <PageLogo />
         {children}
         <Footer />
       </body>
