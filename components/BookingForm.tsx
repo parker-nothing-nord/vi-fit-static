@@ -169,7 +169,7 @@ export default function BookingForm() {
         {/* Success Message */}
         {submitStatus === "success" && (
           <div className="bg-green-50 border border-green-300 text-green-800 px-4 py-3 rounded">
-            Booking submitted successfully! We'll contact you shortly to confirm.
+            Booking submitted successfully! This is where we would send to Gym Maser / email.
           </div>
         )}
 
